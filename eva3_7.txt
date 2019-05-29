@@ -1,0 +1,954 @@
+
+C:\Users\Diego
+? mysqlsh
+MySQL Shell 8.0.13
+
+Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type '\help' or '\?' for help; '\quit' to exit.
+
+
+ MySQL  JS > \sql
+Switching to SQL mode... Commands end with ;
+
+ MySQL  SQL > \connect --mc root@localhost
+Creating a Classic session to 'root@localhost'
+Fetching schema names for autocompletion... Press ^C to stop.
+Your MySQL connection id is 20
+Server version: 8.0.13 MySQL Community Server - GPL
+No default schema selected; type \use <schema> to set one.
+
+ MySQL  localhost:3306 ssl  SQL > \use eva_3
+Default schema set to `eva_3`.
+Fetching table and column names from `eva_3` for auto-completion... Press ^C to stop.
+
+ MySQL  localhost:3306 ssl  eva_3  SQL > show tables;
++-----------------+
+| Tables_in_eva_3 |
++-----------------+
+| actores         |
+| actores_2       |
+| copia_actor     |
+| numeros         |
++-----------------+
+4 rows in set (0.0028 sec)
+
+ MySQL  localhost:3306 ssl  eva_3  SQL > select count(*) from actores_2;
++----------+
+| count(*) |
++----------+
+|      202 |
++----------+
+1 row in set (0.1692 sec)
+
+ MySQL  localhost:3306 ssl  eva_3  SQL > select * from actores_2;
++-----+-------------+--------------+--------------+------------+------+
+| id  | nombre      | apellido     | apellido_mat | fecha_nac  | rfc  |
++-----+-------------+--------------+--------------+------------+------+
+|   1 | PENELOPE    | GUINESS      | NULL         | NULL       | NULL |
+|   2 | NICK        | WAHLBERG     | NULL         | NULL       | NULL |
+|   3 | ED          | CHASE        | NULL         | NULL       | NULL |
+|   4 | JENNIFER    | DAVIS        | NULL         | NULL       | NULL |
+|   5 | JOHNNY      | LOLLOBRIGIDA | NULL         | NULL       | NULL |
+|   6 | BETTE       | NICHOLSON    | NULL         | NULL       | NULL |
+|   7 | GRACE       | MOSTEL       | NULL         | NULL       | NULL |
+|   8 | MATTHEW     | JOHANSSON    | NULL         | NULL       | NULL |
+|   9 | JOE         | SWANK        | NULL         | NULL       | NULL |
+|  10 | CHRISTIAN   | GABLE        | NULL         | NULL       | NULL |
+|  11 | ZERO        | CAGE         | NULL         | NULL       | NULL |
+|  12 | KARL        | BERRY        | NULL         | NULL       | NULL |
+|  13 | UMA         | WOOD         | NULL         | NULL       | NULL |
+|  14 | VIVIEN      | BERGEN       | NULL         | NULL       | NULL |
+|  15 | CUBA        | OLIVIER      | NULL         | NULL       | NULL |
+|  16 | FRED        | COSTNER      | NULL         | NULL       | NULL |
+|  17 | HELEN       | VOIGHT       | NULL         | NULL       | NULL |
+|  18 | DAN         | TORN         | NULL         | NULL       | NULL |
+|  19 | BOB         | FAWCETT      | NULL         | NULL       | NULL |
+|  20 | LUCILLE     | TRACY        | NULL         | NULL       | NULL |
+|  21 | KIRSTEN     | PALTROW      | NULL         | NULL       | NULL |
+|  22 | ELVIS       | MARX         | NULL         | NULL       | NULL |
+|  23 | SANDRA      | KILMER       | NULL         | NULL       | NULL |
+|  24 | CAMERON     | STREEP       | NULL         | NULL       | NULL |
+|  25 | KEVIN       | BLOOM        | NULL         | NULL       | NULL |
+|  26 | RIP         | CRAWFORD     | NULL         | NULL       | NULL |
+|  27 | JULIA       | MCQUEEN      | NULL         | NULL       | NULL |
+|  28 | WOODY       | HOFFMAN      | NULL         | NULL       | NULL |
+|  29 | ALEC        | WAYNE        | NULL         | NULL       | NULL |
+|  30 | SANDRA      | PECK         | NULL         | NULL       | NULL |
+|  31 | SISSY       | SOBIESKI     | NULL         | NULL       | NULL |
+|  32 | TIM         | HACKMAN      | NULL         | NULL       | NULL |
+|  33 | MILLA       | PECK         | NULL         | NULL       | NULL |
+|  34 | AUDREY      | OLIVIER      | NULL         | NULL       | NULL |
+|  35 | JUDY        | DEAN         | NULL         | NULL       | NULL |
+|  36 | BURT        | DUKAKIS      | NULL         | NULL       | NULL |
+|  37 | VAL         | BOLGER       | NULL         | NULL       | NULL |
+|  38 | TOM         | MCKELLEN     | NULL         | NULL       | NULL |
+|  39 | GOLDIE      | BRODY        | NULL         | NULL       | NULL |
+|  40 | JOHNNY      | CAGE         | NULL         | NULL       | NULL |
+|  41 | JODIE       | DEGENERES    | NULL         | NULL       | NULL |
+|  42 | TOM         | MIRANDA      | NULL         | NULL       | NULL |
+|  43 | KIRK        | JOVOVICH     | NULL         | NULL       | NULL |
+|  44 | NICK        | STALLONE     | NULL         | NULL       | NULL |
+|  45 | REESE       | KILMER       | NULL         | NULL       | NULL |
+|  46 | PARKER      | GOLDBERG     | NULL         | NULL       | NULL |
+|  47 | JULIA       | BARRYMORE    | NULL         | NULL       | NULL |
+|  48 | FRANCES     | DAY-LEWIS    | NULL         | NULL       | NULL |
+|  49 | ANNE        | CRONYN       | NULL         | NULL       | NULL |
+|  50 | NATALIE     | HOPKINS      | NULL         | NULL       | NULL |
+|  51 | GARY        | PHOENIX      | NULL         | NULL       | NULL |
+|  52 | CARMEN      | HUNT         | NULL         | NULL       | NULL |
+|  53 | MENA        | TEMPLE       | NULL         | NULL       | NULL |
+|  54 | PENELOPE    | PINKETT      | NULL         | NULL       | NULL |
+|  55 | FAY         | KILMER       | NULL         | NULL       | NULL |
+|  56 | DAN         | HARRIS       | NULL         | NULL       | NULL |
+|  57 | JUDE        | CRUISE       | NULL         | NULL       | NULL |
+|  58 | CHRISTIAN   | AKROYD       | NULL         | NULL       | NULL |
+|  59 | DUSTIN      | TAUTOU       | NULL         | NULL       | NULL |
+|  60 | HENRY       | BERRY        | NULL         | NULL       | NULL |
+|  61 | CHRISTIAN   | NEESON       | NULL         | NULL       | NULL |
+|  62 | JAYNE       | NEESON       | NULL         | NULL       | NULL |
+|  63 | CAMERON     | WRAY         | NULL         | NULL       | NULL |
+|  64 | RAY         | JOHANSSON    | NULL         | NULL       | NULL |
+|  65 | ANGELA      | HUDSON       | NULL         | NULL       | NULL |
+|  66 | MARY        | TANDY        | NULL         | NULL       | NULL |
+|  67 | JESSICA     | BAILEY       | NULL         | NULL       | NULL |
+|  68 | RIP         | WINSLET      | NULL         | NULL       | NULL |
+|  69 | KENNETH     | PALTROW      | NULL         | NULL       | NULL |
+|  70 | MICHELLE    | MCCONAUGHEY  | NULL         | NULL       | NULL |
+|  71 | ADAM        | GRANT        | NULL         | NULL       | NULL |
+|  72 | SEAN        | WILLIAMS     | NULL         | NULL       | NULL |
+|  73 | GARY        | PENN         | NULL         | NULL       | NULL |
+|  74 | MILLA       | KEITEL       | NULL         | NULL       | NULL |
+|  75 | BURT        | POSEY        | NULL         | NULL       | NULL |
+|  76 | ANGELINA    | ASTAIRE      | NULL         | NULL       | NULL |
+|  77 | CARY        | MCCONAUGHEY  | NULL         | NULL       | NULL |
+|  78 | GROUCHO     | SINATRA      | NULL         | NULL       | NULL |
+|  79 | MAE         | HOFFMAN      | NULL         | NULL       | NULL |
+|  80 | RALPH       | CRUZ         | NULL         | NULL       | NULL |
+|  81 | SCARLETT    | DAMON        | NULL         | NULL       | NULL |
+|  82 | WOODY       | JOLIE        | NULL         | NULL       | NULL |
+|  83 | BEN         | WILLIS       | NULL         | NULL       | NULL |
+|  84 | JAMES       | PITT         | NULL         | NULL       | NULL |
+|  85 | MINNIE      | ZELLWEGER    | NULL         | NULL       | NULL |
+|  86 | GREG        | CHAPLIN      | NULL         | NULL       | NULL |
+|  87 | SPENCER     | PECK         | NULL         | NULL       | NULL |
+|  88 | KENNETH     | PESCI        | NULL         | NULL       | NULL |
+|  89 | CHARLIZE    | DENCH        | NULL         | NULL       | NULL |
+|  90 | SEAN        | GUINESS      | NULL         | NULL       | NULL |
+|  91 | CHRISTOPHER | BERRY        | NULL         | NULL       | NULL |
+|  92 | KIRSTEN     | AKROYD       | NULL         | NULL       | NULL |
+|  93 | ELLEN       | PRESLEY      | NULL         | NULL       | NULL |
+|  94 | KENNETH     | TORN         | NULL         | NULL       | NULL |
+|  95 | DARYL       | WAHLBERG     | NULL         | NULL       | NULL |
+|  96 | GENE        | WILLIS       | NULL         | NULL       | NULL |
+|  97 | MEG         | HAWKE        | NULL         | NULL       | NULL |
+|  98 | CHRIS       | BRIDGES      | NULL         | NULL       | NULL |
+|  99 | JIM         | MOSTEL       | NULL         | NULL       | NULL |
+| 100 | SPENCER     | DEPP         | NULL         | NULL       | NULL |
+| 101 | SUSAN       | DAVIS        | NULL         | NULL       | NULL |
+| 102 | WALTER      | TORN         | NULL         | NULL       | NULL |
+| 103 | MATTHEW     | LEIGH        | NULL         | NULL       | NULL |
+| 104 | PENELOPE    | CRONYN       | NULL         | NULL       | NULL |
+| 105 | SIDNEY      | CROWE        | NULL         | NULL       | NULL |
+| 106 | GROUCHO     | DUNST        | NULL         | NULL       | NULL |
+| 107 | GINA        | DEGENERES    | NULL         | NULL       | NULL |
+| 108 | WARREN      | NOLTE        | NULL         | NULL       | NULL |
+| 109 | SYLVESTER   | DERN         | NULL         | NULL       | NULL |
+| 110 | SUSAN       | DAVIS        | NULL         | NULL       | NULL |
+| 111 | CAMERON     | ZELLWEGER    | NULL         | NULL       | NULL |
+| 112 | RUSSELL     | BACALL       | NULL         | NULL       | NULL |
+| 113 | MORGAN      | HOPKINS      | NULL         | NULL       | NULL |
+| 114 | MORGAN      | MCDORMAND    | NULL         | NULL       | NULL |
+| 115 | HARRISON    | BALE         | NULL         | NULL       | NULL |
+| 116 | DAN         | STREEP       | NULL         | NULL       | NULL |
+| 117 | RENEE       | TRACY        | NULL         | NULL       | NULL |
+| 118 | CUBA        | ALLEN        | NULL         | NULL       | NULL |
+| 119 | WARREN      | JACKMAN      | NULL         | NULL       | NULL |
+| 120 | PENELOPE    | MONROE       | NULL         | NULL       | NULL |
+| 121 | LIZA        | BERGMAN      | NULL         | NULL       | NULL |
+| 122 | SALMA       | NOLTE        | NULL         | NULL       | NULL |
+| 123 | JULIANNE    | DENCH        | NULL         | NULL       | NULL |
+| 124 | SCARLETT    | BENING       | NULL         | NULL       | NULL |
+| 125 | ALBERT      | NOLTE        | NULL         | NULL       | NULL |
+| 126 | FRANCES     | TOMEI        | NULL         | NULL       | NULL |
+| 127 | KEVIN       | GARLAND      | NULL         | NULL       | NULL |
+| 128 | CATE        | MCQUEEN      | NULL         | NULL       | NULL |
+| 129 | DARYL       | CRAWFORD     | NULL         | NULL       | NULL |
+| 130 | GRETA       | KEITEL       | NULL         | NULL       | NULL |
+| 131 | JANE        | JACKMAN      | NULL         | NULL       | NULL |
+| 132 | ADAM        | HOPPER       | NULL         | NULL       | NULL |
+| 133 | RICHARD     | PENN         | NULL         | NULL       | NULL |
+| 134 | GENE        | HOPKINS      | NULL         | NULL       | NULL |
+| 135 | RITA        | REYNOLDS     | NULL         | NULL       | NULL |
+| 136 | ED          | MANSFIELD    | NULL         | NULL       | NULL |
+| 137 | MORGAN      | WILLIAMS     | NULL         | NULL       | NULL |
+| 138 | LUCILLE     | DEE          | NULL         | NULL       | NULL |
+| 139 | EWAN        | GOODING      | NULL         | NULL       | NULL |
+| 140 | WHOOPI      | HURT         | NULL         | NULL       | NULL |
+| 141 | CATE        | HARRIS       | NULL         | NULL       | NULL |
+| 142 | JADA        | RYDER        | NULL         | NULL       | NULL |
+| 143 | RIVER       | DEAN         | NULL         | NULL       | NULL |
+| 144 | ANGELA      | WITHERSPOON  | NULL         | NULL       | NULL |
+| 145 | KIM         | ALLEN        | NULL         | NULL       | NULL |
+| 146 | ALBERT      | JOHANSSON    | NULL         | NULL       | NULL |
+| 147 | FAY         | WINSLET      | NULL         | NULL       | NULL |
+| 148 | EMILY       | DEE          | NULL         | NULL       | NULL |
+| 149 | RUSSELL     | TEMPLE       | NULL         | NULL       | NULL |
+| 150 | JAYNE       | NOLTE        | NULL         | NULL       | NULL |
+| 151 | GEOFFREY    | HESTON       | NULL         | NULL       | NULL |
+| 152 | BEN         | HARRIS       | NULL         | NULL       | NULL |
+| 153 | MINNIE      | KILMER       | NULL         | NULL       | NULL |
+| 154 | MERYL       | GIBSON       | NULL         | NULL       | NULL |
+| 155 | IAN         | TANDY        | NULL         | NULL       | NULL |
+| 156 | FAY         | WOOD         | NULL         | NULL       | NULL |
+| 157 | GRETA       | MALDEN       | NULL         | NULL       | NULL |
+| 158 | VIVIEN      | BASINGER     | NULL         | NULL       | NULL |
+| 159 | LAURA       | BRODY        | NULL         | NULL       | NULL |
+| 160 | CHRIS       | DEPP         | NULL         | NULL       | NULL |
+| 161 | HARVEY      | HOPE         | NULL         | NULL       | NULL |
+| 162 | OPRAH       | KILMER       | NULL         | NULL       | NULL |
+| 163 | CHRISTOPHER | WEST         | NULL         | NULL       | NULL |
+| 164 | HUMPHREY    | WILLIS       | NULL         | NULL       | NULL |
+| 165 | AL          | GARLAND      | NULL         | NULL       | NULL |
+| 166 | NICK        | DEGENERES    | NULL         | NULL       | NULL |
+| 167 | LAURENCE    | BULLOCK      | NULL         | NULL       | NULL |
+| 168 | WILL        | WILSON       | NULL         | NULL       | NULL |
+| 169 | KENNETH     | HOFFMAN      | NULL         | NULL       | NULL |
+| 170 | MENA        | HOPPER       | NULL         | NULL       | NULL |
+| 171 | OLYMPIA     | PFEIFFER     | NULL         | NULL       | NULL |
+| 172 | GROUCHO     | WILLIAMS     | NULL         | NULL       | NULL |
+| 173 | ALAN        | DREYFUSS     | NULL         | NULL       | NULL |
+| 174 | MICHAEL     | BENING       | NULL         | NULL       | NULL |
+| 175 | WILLIAM     | HACKMAN      | NULL         | NULL       | NULL |
+| 176 | JON         | CHASE        | NULL         | NULL       | NULL |
+| 177 | GENE        | MCKELLEN     | NULL         | NULL       | NULL |
+| 178 | LISA        | MONROE       | NULL         | NULL       | NULL |
+| 179 | ED          | GUINESS      | NULL         | NULL       | NULL |
+| 180 | JEFF        | SILVERSTONE  | NULL         | NULL       | NULL |
+| 181 | MATTHEW     | CARREY       | NULL         | NULL       | NULL |
+| 182 | DEBBIE      | AKROYD       | NULL         | NULL       | NULL |
+| 183 | RUSSELL     | CLOSE        | NULL         | NULL       | NULL |
+| 184 | HUMPHREY    | GARLAND      | NULL         | NULL       | NULL |
+| 185 | MICHAEL     | BOLGER       | NULL         | NULL       | NULL |
+| 186 | JULIA       | ZELLWEGER    | NULL         | NULL       | NULL |
+| 187 | RENEE       | BALL         | NULL         | NULL       | NULL |
+| 188 | ROCK        | DUKAKIS      | NULL         | NULL       | NULL |
+| 189 | CUBA        | BIRCH        | NULL         | NULL       | NULL |
+| 190 | AUDREY      | BAILEY       | NULL         | NULL       | NULL |
+| 191 | GREGORY     | GOODING      | NULL         | NULL       | NULL |
+| 192 | JOHN        | SUVARI       | NULL         | NULL       | NULL |
+| 193 | BURT        | TEMPLE       | NULL         | NULL       | NULL |
+| 194 | MERYL       | ALLEN        | NULL         | NULL       | NULL |
+| 195 | JAYNE       | SILVERSTONE  | NULL         | NULL       | NULL |
+| 196 | BELA        | WALKEN       | NULL         | NULL       | NULL |
+| 197 | REESE       | WEST         | NULL         | NULL       | NULL |
+| 198 | MARY        | KEITEL       | NULL         | NULL       | NULL |
+| 199 | JULIA       | FAWCETT      | NULL         | NULL       | NULL |
+| 200 | THORA       | TEMPLE       | NULL         | NULL       | NULL |
+|   0 | Nallely     | Trevizo      | NULL         | NULL       | NULL |
+| 120 | Diego Aaron | Portillo     | Hernandez    | 1998-01-13 |      |
++-----+-------------+--------------+--------------+------------+------+
+202 rows in set (0.0463 sec)
+
+ MySQL  localhost:3306 ssl  eva_3  SQL > update actores_2
+                                      -> set fecha_nac = curdate()
+                                      -> where fecha_nac is null;
+Query OK, 201 rows affected (1.0221 sec)
+
+Rows matched: 201  Changed: 201  Warnings: 0
+
+ MySQL  localhost:3306 ssl  eva_3  SQL > select * from actores_2;
++-----+-------------+--------------+--------------+------------+------+
+| id  | nombre      | apellido     | apellido_mat | fecha_nac  | rfc  |
++-----+-------------+--------------+--------------+------------+------+
+|   1 | PENELOPE    | GUINESS      | NULL         | 2019-05-13 | NULL |
+|   2 | NICK        | WAHLBERG     | NULL         | 2019-05-13 | NULL |
+|   3 | ED          | CHASE        | NULL         | 2019-05-13 | NULL |
+|   4 | JENNIFER    | DAVIS        | NULL         | 2019-05-13 | NULL |
+|   5 | JOHNNY      | LOLLOBRIGIDA | NULL         | 2019-05-13 | NULL |
+|   6 | BETTE       | NICHOLSON    | NULL         | 2019-05-13 | NULL |
+|   7 | GRACE       | MOSTEL       | NULL         | 2019-05-13 | NULL |
+|   8 | MATTHEW     | JOHANSSON    | NULL         | 2019-05-13 | NULL |
+|   9 | JOE         | SWANK        | NULL         | 2019-05-13 | NULL |
+|  10 | CHRISTIAN   | GABLE        | NULL         | 2019-05-13 | NULL |
+|  11 | ZERO        | CAGE         | NULL         | 2019-05-13 | NULL |
+|  12 | KARL        | BERRY        | NULL         | 2019-05-13 | NULL |
+|  13 | UMA         | WOOD         | NULL         | 2019-05-13 | NULL |
+|  14 | VIVIEN      | BERGEN       | NULL         | 2019-05-13 | NULL |
+|  15 | CUBA        | OLIVIER      | NULL         | 2019-05-13 | NULL |
+|  16 | FRED        | COSTNER      | NULL         | 2019-05-13 | NULL |
+|  17 | HELEN       | VOIGHT       | NULL         | 2019-05-13 | NULL |
+|  18 | DAN         | TORN         | NULL         | 2019-05-13 | NULL |
+|  19 | BOB         | FAWCETT      | NULL         | 2019-05-13 | NULL |
+|  20 | LUCILLE     | TRACY        | NULL         | 2019-05-13 | NULL |
+|  21 | KIRSTEN     | PALTROW      | NULL         | 2019-05-13 | NULL |
+|  22 | ELVIS       | MARX         | NULL         | 2019-05-13 | NULL |
+|  23 | SANDRA      | KILMER       | NULL         | 2019-05-13 | NULL |
+|  24 | CAMERON     | STREEP       | NULL         | 2019-05-13 | NULL |
+|  25 | KEVIN       | BLOOM        | NULL         | 2019-05-13 | NULL |
+|  26 | RIP         | CRAWFORD     | NULL         | 2019-05-13 | NULL |
+|  27 | JULIA       | MCQUEEN      | NULL         | 2019-05-13 | NULL |
+|  28 | WOODY       | HOFFMAN      | NULL         | 2019-05-13 | NULL |
+|  29 | ALEC        | WAYNE        | NULL         | 2019-05-13 | NULL |
+|  30 | SANDRA      | PECK         | NULL         | 2019-05-13 | NULL |
+|  31 | SISSY       | SOBIESKI     | NULL         | 2019-05-13 | NULL |
+|  32 | TIM         | HACKMAN      | NULL         | 2019-05-13 | NULL |
+|  33 | MILLA       | PECK         | NULL         | 2019-05-13 | NULL |
+|  34 | AUDREY      | OLIVIER      | NULL         | 2019-05-13 | NULL |
+|  35 | JUDY        | DEAN         | NULL         | 2019-05-13 | NULL |
+|  36 | BURT        | DUKAKIS      | NULL         | 2019-05-13 | NULL |
+|  37 | VAL         | BOLGER       | NULL         | 2019-05-13 | NULL |
+|  38 | TOM         | MCKELLEN     | NULL         | 2019-05-13 | NULL |
+|  39 | GOLDIE      | BRODY        | NULL         | 2019-05-13 | NULL |
+|  40 | JOHNNY      | CAGE         | NULL         | 2019-05-13 | NULL |
+|  41 | JODIE       | DEGENERES    | NULL         | 2019-05-13 | NULL |
+|  42 | TOM         | MIRANDA      | NULL         | 2019-05-13 | NULL |
+|  43 | KIRK        | JOVOVICH     | NULL         | 2019-05-13 | NULL |
+|  44 | NICK        | STALLONE     | NULL         | 2019-05-13 | NULL |
+|  45 | REESE       | KILMER       | NULL         | 2019-05-13 | NULL |
+|  46 | PARKER      | GOLDBERG     | NULL         | 2019-05-13 | NULL |
+|  47 | JULIA       | BARRYMORE    | NULL         | 2019-05-13 | NULL |
+|  48 | FRANCES     | DAY-LEWIS    | NULL         | 2019-05-13 | NULL |
+|  49 | ANNE        | CRONYN       | NULL         | 2019-05-13 | NULL |
+|  50 | NATALIE     | HOPKINS      | NULL         | 2019-05-13 | NULL |
+|  51 | GARY        | PHOENIX      | NULL         | 2019-05-13 | NULL |
+|  52 | CARMEN      | HUNT         | NULL         | 2019-05-13 | NULL |
+|  53 | MENA        | TEMPLE       | NULL         | 2019-05-13 | NULL |
+|  54 | PENELOPE    | PINKETT      | NULL         | 2019-05-13 | NULL |
+|  55 | FAY         | KILMER       | NULL         | 2019-05-13 | NULL |
+|  56 | DAN         | HARRIS       | NULL         | 2019-05-13 | NULL |
+|  57 | JUDE        | CRUISE       | NULL         | 2019-05-13 | NULL |
+|  58 | CHRISTIAN   | AKROYD       | NULL         | 2019-05-13 | NULL |
+|  59 | DUSTIN      | TAUTOU       | NULL         | 2019-05-13 | NULL |
+|  60 | HENRY       | BERRY        | NULL         | 2019-05-13 | NULL |
+|  61 | CHRISTIAN   | NEESON       | NULL         | 2019-05-13 | NULL |
+|  62 | JAYNE       | NEESON       | NULL         | 2019-05-13 | NULL |
+|  63 | CAMERON     | WRAY         | NULL         | 2019-05-13 | NULL |
+|  64 | RAY         | JOHANSSON    | NULL         | 2019-05-13 | NULL |
+|  65 | ANGELA      | HUDSON       | NULL         | 2019-05-13 | NULL |
+|  66 | MARY        | TANDY        | NULL         | 2019-05-13 | NULL |
+|  67 | JESSICA     | BAILEY       | NULL         | 2019-05-13 | NULL |
+|  68 | RIP         | WINSLET      | NULL         | 2019-05-13 | NULL |
+|  69 | KENNETH     | PALTROW      | NULL         | 2019-05-13 | NULL |
+|  70 | MICHELLE    | MCCONAUGHEY  | NULL         | 2019-05-13 | NULL |
+|  71 | ADAM        | GRANT        | NULL         | 2019-05-13 | NULL |
+|  72 | SEAN        | WILLIAMS     | NULL         | 2019-05-13 | NULL |
+|  73 | GARY        | PENN         | NULL         | 2019-05-13 | NULL |
+|  74 | MILLA       | KEITEL       | NULL         | 2019-05-13 | NULL |
+|  75 | BURT        | POSEY        | NULL         | 2019-05-13 | NULL |
+|  76 | ANGELINA    | ASTAIRE      | NULL         | 2019-05-13 | NULL |
+|  77 | CARY        | MCCONAUGHEY  | NULL         | 2019-05-13 | NULL |
+|  78 | GROUCHO     | SINATRA      | NULL         | 2019-05-13 | NULL |
+|  79 | MAE         | HOFFMAN      | NULL         | 2019-05-13 | NULL |
+|  80 | RALPH       | CRUZ         | NULL         | 2019-05-13 | NULL |
+|  81 | SCARLETT    | DAMON        | NULL         | 2019-05-13 | NULL |
+|  82 | WOODY       | JOLIE        | NULL         | 2019-05-13 | NULL |
+|  83 | BEN         | WILLIS       | NULL         | 2019-05-13 | NULL |
+|  84 | JAMES       | PITT         | NULL         | 2019-05-13 | NULL |
+|  85 | MINNIE      | ZELLWEGER    | NULL         | 2019-05-13 | NULL |
+|  86 | GREG        | CHAPLIN      | NULL         | 2019-05-13 | NULL |
+|  87 | SPENCER     | PECK         | NULL         | 2019-05-13 | NULL |
+|  88 | KENNETH     | PESCI        | NULL         | 2019-05-13 | NULL |
+|  89 | CHARLIZE    | DENCH        | NULL         | 2019-05-13 | NULL |
+|  90 | SEAN        | GUINESS      | NULL         | 2019-05-13 | NULL |
+|  91 | CHRISTOPHER | BERRY        | NULL         | 2019-05-13 | NULL |
+|  92 | KIRSTEN     | AKROYD       | NULL         | 2019-05-13 | NULL |
+|  93 | ELLEN       | PRESLEY      | NULL         | 2019-05-13 | NULL |
+|  94 | KENNETH     | TORN         | NULL         | 2019-05-13 | NULL |
+|  95 | DARYL       | WAHLBERG     | NULL         | 2019-05-13 | NULL |
+|  96 | GENE        | WILLIS       | NULL         | 2019-05-13 | NULL |
+|  97 | MEG         | HAWKE        | NULL         | 2019-05-13 | NULL |
+|  98 | CHRIS       | BRIDGES      | NULL         | 2019-05-13 | NULL |
+|  99 | JIM         | MOSTEL       | NULL         | 2019-05-13 | NULL |
+| 100 | SPENCER     | DEPP         | NULL         | 2019-05-13 | NULL |
+| 101 | SUSAN       | DAVIS        | NULL         | 2019-05-13 | NULL |
+| 102 | WALTER      | TORN         | NULL         | 2019-05-13 | NULL |
+| 103 | MATTHEW     | LEIGH        | NULL         | 2019-05-13 | NULL |
+| 104 | PENELOPE    | CRONYN       | NULL         | 2019-05-13 | NULL |
+| 105 | SIDNEY      | CROWE        | NULL         | 2019-05-13 | NULL |
+| 106 | GROUCHO     | DUNST        | NULL         | 2019-05-13 | NULL |
+| 107 | GINA        | DEGENERES    | NULL         | 2019-05-13 | NULL |
+| 108 | WARREN      | NOLTE        | NULL         | 2019-05-13 | NULL |
+| 109 | SYLVESTER   | DERN         | NULL         | 2019-05-13 | NULL |
+| 110 | SUSAN       | DAVIS        | NULL         | 2019-05-13 | NULL |
+| 111 | CAMERON     | ZELLWEGER    | NULL         | 2019-05-13 | NULL |
+| 112 | RUSSELL     | BACALL       | NULL         | 2019-05-13 | NULL |
+| 113 | MORGAN      | HOPKINS      | NULL         | 2019-05-13 | NULL |
+| 114 | MORGAN      | MCDORMAND    | NULL         | 2019-05-13 | NULL |
+| 115 | HARRISON    | BALE         | NULL         | 2019-05-13 | NULL |
+| 116 | DAN         | STREEP       | NULL         | 2019-05-13 | NULL |
+| 117 | RENEE       | TRACY        | NULL         | 2019-05-13 | NULL |
+| 118 | CUBA        | ALLEN        | NULL         | 2019-05-13 | NULL |
+| 119 | WARREN      | JACKMAN      | NULL         | 2019-05-13 | NULL |
+| 120 | PENELOPE    | MONROE       | NULL         | 2019-05-13 | NULL |
+| 121 | LIZA        | BERGMAN      | NULL         | 2019-05-13 | NULL |
+| 122 | SALMA       | NOLTE        | NULL         | 2019-05-13 | NULL |
+| 123 | JULIANNE    | DENCH        | NULL         | 2019-05-13 | NULL |
+| 124 | SCARLETT    | BENING       | NULL         | 2019-05-13 | NULL |
+| 125 | ALBERT      | NOLTE        | NULL         | 2019-05-13 | NULL |
+| 126 | FRANCES     | TOMEI        | NULL         | 2019-05-13 | NULL |
+| 127 | KEVIN       | GARLAND      | NULL         | 2019-05-13 | NULL |
+| 128 | CATE        | MCQUEEN      | NULL         | 2019-05-13 | NULL |
+| 129 | DARYL       | CRAWFORD     | NULL         | 2019-05-13 | NULL |
+| 130 | GRETA       | KEITEL       | NULL         | 2019-05-13 | NULL |
+| 131 | JANE        | JACKMAN      | NULL         | 2019-05-13 | NULL |
+| 132 | ADAM        | HOPPER       | NULL         | 2019-05-13 | NULL |
+| 133 | RICHARD     | PENN         | NULL         | 2019-05-13 | NULL |
+| 134 | GENE        | HOPKINS      | NULL         | 2019-05-13 | NULL |
+| 135 | RITA        | REYNOLDS     | NULL         | 2019-05-13 | NULL |
+| 136 | ED          | MANSFIELD    | NULL         | 2019-05-13 | NULL |
+| 137 | MORGAN      | WILLIAMS     | NULL         | 2019-05-13 | NULL |
+| 138 | LUCILLE     | DEE          | NULL         | 2019-05-13 | NULL |
+| 139 | EWAN        | GOODING      | NULL         | 2019-05-13 | NULL |
+| 140 | WHOOPI      | HURT         | NULL         | 2019-05-13 | NULL |
+| 141 | CATE        | HARRIS       | NULL         | 2019-05-13 | NULL |
+| 142 | JADA        | RYDER        | NULL         | 2019-05-13 | NULL |
+| 143 | RIVER       | DEAN         | NULL         | 2019-05-13 | NULL |
+| 144 | ANGELA      | WITHERSPOON  | NULL         | 2019-05-13 | NULL |
+| 145 | KIM         | ALLEN        | NULL         | 2019-05-13 | NULL |
+| 146 | ALBERT      | JOHANSSON    | NULL         | 2019-05-13 | NULL |
+| 147 | FAY         | WINSLET      | NULL         | 2019-05-13 | NULL |
+| 148 | EMILY       | DEE          | NULL         | 2019-05-13 | NULL |
+| 149 | RUSSELL     | TEMPLE       | NULL         | 2019-05-13 | NULL |
+| 150 | JAYNE       | NOLTE        | NULL         | 2019-05-13 | NULL |
+| 151 | GEOFFREY    | HESTON       | NULL         | 2019-05-13 | NULL |
+| 152 | BEN         | HARRIS       | NULL         | 2019-05-13 | NULL |
+| 153 | MINNIE      | KILMER       | NULL         | 2019-05-13 | NULL |
+| 154 | MERYL       | GIBSON       | NULL         | 2019-05-13 | NULL |
+| 155 | IAN         | TANDY        | NULL         | 2019-05-13 | NULL |
+| 156 | FAY         | WOOD         | NULL         | 2019-05-13 | NULL |
+| 157 | GRETA       | MALDEN       | NULL         | 2019-05-13 | NULL |
+| 158 | VIVIEN      | BASINGER     | NULL         | 2019-05-13 | NULL |
+| 159 | LAURA       | BRODY        | NULL         | 2019-05-13 | NULL |
+| 160 | CHRIS       | DEPP         | NULL         | 2019-05-13 | NULL |
+| 161 | HARVEY      | HOPE         | NULL         | 2019-05-13 | NULL |
+| 162 | OPRAH       | KILMER       | NULL         | 2019-05-13 | NULL |
+| 163 | CHRISTOPHER | WEST         | NULL         | 2019-05-13 | NULL |
+| 164 | HUMPHREY    | WILLIS       | NULL         | 2019-05-13 | NULL |
+| 165 | AL          | GARLAND      | NULL         | 2019-05-13 | NULL |
+| 166 | NICK        | DEGENERES    | NULL         | 2019-05-13 | NULL |
+| 167 | LAURENCE    | BULLOCK      | NULL         | 2019-05-13 | NULL |
+| 168 | WILL        | WILSON       | NULL         | 2019-05-13 | NULL |
+| 169 | KENNETH     | HOFFMAN      | NULL         | 2019-05-13 | NULL |
+| 170 | MENA        | HOPPER       | NULL         | 2019-05-13 | NULL |
+| 171 | OLYMPIA     | PFEIFFER     | NULL         | 2019-05-13 | NULL |
+| 172 | GROUCHO     | WILLIAMS     | NULL         | 2019-05-13 | NULL |
+| 173 | ALAN        | DREYFUSS     | NULL         | 2019-05-13 | NULL |
+| 174 | MICHAEL     | BENING       | NULL         | 2019-05-13 | NULL |
+| 175 | WILLIAM     | HACKMAN      | NULL         | 2019-05-13 | NULL |
+| 176 | JON         | CHASE        | NULL         | 2019-05-13 | NULL |
+| 177 | GENE        | MCKELLEN     | NULL         | 2019-05-13 | NULL |
+| 178 | LISA        | MONROE       | NULL         | 2019-05-13 | NULL |
+| 179 | ED          | GUINESS      | NULL         | 2019-05-13 | NULL |
+| 180 | JEFF        | SILVERSTONE  | NULL         | 2019-05-13 | NULL |
+| 181 | MATTHEW     | CARREY       | NULL         | 2019-05-13 | NULL |
+| 182 | DEBBIE      | AKROYD       | NULL         | 2019-05-13 | NULL |
+| 183 | RUSSELL     | CLOSE        | NULL         | 2019-05-13 | NULL |
+| 184 | HUMPHREY    | GARLAND      | NULL         | 2019-05-13 | NULL |
+| 185 | MICHAEL     | BOLGER       | NULL         | 2019-05-13 | NULL |
+| 186 | JULIA       | ZELLWEGER    | NULL         | 2019-05-13 | NULL |
+| 187 | RENEE       | BALL         | NULL         | 2019-05-13 | NULL |
+| 188 | ROCK        | DUKAKIS      | NULL         | 2019-05-13 | NULL |
+| 189 | CUBA        | BIRCH        | NULL         | 2019-05-13 | NULL |
+| 190 | AUDREY      | BAILEY       | NULL         | 2019-05-13 | NULL |
+| 191 | GREGORY     | GOODING      | NULL         | 2019-05-13 | NULL |
+| 192 | JOHN        | SUVARI       | NULL         | 2019-05-13 | NULL |
+| 193 | BURT        | TEMPLE       | NULL         | 2019-05-13 | NULL |
+| 194 | MERYL       | ALLEN        | NULL         | 2019-05-13 | NULL |
+| 195 | JAYNE       | SILVERSTONE  | NULL         | 2019-05-13 | NULL |
+| 196 | BELA        | WALKEN       | NULL         | 2019-05-13 | NULL |
+| 197 | REESE       | WEST         | NULL         | 2019-05-13 | NULL |
+| 198 | MARY        | KEITEL       | NULL         | 2019-05-13 | NULL |
+| 199 | JULIA       | FAWCETT      | NULL         | 2019-05-13 | NULL |
+| 200 | THORA       | TEMPLE       | NULL         | 2019-05-13 | NULL |
+|   0 | Nallely     | Trevizo      | NULL         | 2019-05-13 | NULL |
+| 120 | Diego Aaron | Portillo     | Hernandez    | 1998-01-13 |      |
++-----+-------------+--------------+--------------+------------+------+
+202 rows in set (0.0023 sec)
+
+ MySQL  localhost:3306 ssl  eva_3  SQL > select gen_rfc('Diego','POrtillo','Hernandez','1998-01-13');
++------------------------------------------------------+
+| gen_rfc('Diego','POrtillo','Hernandez','1998-01-13') |
++------------------------------------------------------+
+| NULL                                                 |
++------------------------------------------------------+
+1 row in set (0.2852 sec)
+
+ MySQL  localhost:3306 ssl  eva_3  SQL > select gen_rfc('Diego','POrtillo','Hernandez','1998-01-13');
++------------------------------------------------------+
+| gen_rfc('Diego','POrtillo','Hernandez','1998-01-13') |
++------------------------------------------------------+
+| NULL                                                 |
++------------------------------------------------------+
+1 row in set (0.0792 sec)
+
+ MySQL  localhost:3306 ssl  eva_3  SQL > select gen_rfc('Diego','POrtillo','Hernandez','1998-01-13');
++------------------------------------------------------+
+| gen_rfc('Diego','POrtillo','Hernandez','1998-01-13') |
++------------------------------------------------------+
+| NULL                                                 |
++------------------------------------------------------+
+1 row in set (0.0013 sec)
+
+ MySQL  localhost:3306 ssl  eva_3  SQL > select gen_rfc('Diego','POrtillo','Hernandez','1998-01-13');
++------------------------------------------------------+
+| gen_rfc('Diego','POrtillo','Hernandez','1998-01-13') |
++------------------------------------------------------+
+| NULL                                                 |
++------------------------------------------------------+
+1 row in set (0.0014 sec)
+
+ MySQL  localhost:3306 ssl  eva_3  SQL > select gen_rfc('Diego','POrtillo','Hernandez','1998-01-13');
++------------------------------------------------------+
+| gen_rfc('Diego','POrtillo','Hernandez','1998-01-13') |
++------------------------------------------------------+
+| POHD980113X                                          |
++------------------------------------------------------+
+1 row in set (0.0026 sec)
+
+ MySQL  localhost:3306 ssl  eva_3  SQL > select gen_rfc('Diego','POrtillo','Hernandez','1998-01-13');
++------------------------------------------------------+
+| gen_rfc('Diego','POrtillo','Hernandez','1998-01-13') |
++------------------------------------------------------+
+| POHD980113804                                        |
++------------------------------------------------------+
+1 row in set (0.0025 sec)
+
+ MySQL  localhost:3306 ssl  eva_3  SQL > call asignar_rfc();
+ERROR: 1328 (HY000): Incorrect number of FETCH variables
+
+ MySQL  localhost:3306 ssl  eva_3  SQL > call asignar_rfc();
+ERROR: 1054 (42S22): Unknown column 'npm' in 'field list'
+
+ MySQL  localhost:3306 ssl  eva_3  SQL > call asignar_rfc();
+Query OK, 0 rows affected (0.4916 sec)
+
+ MySQL  localhost:3306 ssl  eva_3  SQL > select * from actores_2;
++-----+-------------+--------------+--------------+------------+------+
+| id  | nombre      | apellido     | apellido_mat | fecha_nac  | rfc  |
++-----+-------------+--------------+--------------+------------+------+
+|   1 | PENELOPE    | GUINESS      | NULL         | 2019-05-13 | NULL |
+|   2 | NICK        | WAHLBERG     | NULL         | 2019-05-13 | NULL |
+|   3 | ED          | CHASE        | NULL         | 2019-05-13 | NULL |
+|   4 | JENNIFER    | DAVIS        | NULL         | 2019-05-13 | NULL |
+|   5 | JOHNNY      | LOLLOBRIGIDA | NULL         | 2019-05-13 | NULL |
+|   6 | BETTE       | NICHOLSON    | NULL         | 2019-05-13 | NULL |
+|   7 | GRACE       | MOSTEL       | NULL         | 2019-05-13 | NULL |
+|   8 | MATTHEW     | JOHANSSON    | NULL         | 2019-05-13 | NULL |
+|   9 | JOE         | SWANK        | NULL         | 2019-05-13 | NULL |
+|  10 | CHRISTIAN   | GABLE        | NULL         | 2019-05-13 | NULL |
+|  11 | ZERO        | CAGE         | NULL         | 2019-05-13 | NULL |
+|  12 | KARL        | BERRY        | NULL         | 2019-05-13 | NULL |
+|  13 | UMA         | WOOD         | NULL         | 2019-05-13 | NULL |
+|  14 | VIVIEN      | BERGEN       | NULL         | 2019-05-13 | NULL |
+|  15 | CUBA        | OLIVIER      | NULL         | 2019-05-13 | NULL |
+|  16 | FRED        | COSTNER      | NULL         | 2019-05-13 | NULL |
+|  17 | HELEN       | VOIGHT       | NULL         | 2019-05-13 | NULL |
+|  18 | DAN         | TORN         | NULL         | 2019-05-13 | NULL |
+|  19 | BOB         | FAWCETT      | NULL         | 2019-05-13 | NULL |
+|  20 | LUCILLE     | TRACY        | NULL         | 2019-05-13 | NULL |
+|  21 | KIRSTEN     | PALTROW      | NULL         | 2019-05-13 | NULL |
+|  22 | ELVIS       | MARX         | NULL         | 2019-05-13 | NULL |
+|  23 | SANDRA      | KILMER       | NULL         | 2019-05-13 | NULL |
+|  24 | CAMERON     | STREEP       | NULL         | 2019-05-13 | NULL |
+|  25 | KEVIN       | BLOOM        | NULL         | 2019-05-13 | NULL |
+|  26 | RIP         | CRAWFORD     | NULL         | 2019-05-13 | NULL |
+|  27 | JULIA       | MCQUEEN      | NULL         | 2019-05-13 | NULL |
+|  28 | WOODY       | HOFFMAN      | NULL         | 2019-05-13 | NULL |
+|  29 | ALEC        | WAYNE        | NULL         | 2019-05-13 | NULL |
+|  30 | SANDRA      | PECK         | NULL         | 2019-05-13 | NULL |
+|  31 | SISSY       | SOBIESKI     | NULL         | 2019-05-13 | NULL |
+|  32 | TIM         | HACKMAN      | NULL         | 2019-05-13 | NULL |
+|  33 | MILLA       | PECK         | NULL         | 2019-05-13 | NULL |
+|  34 | AUDREY      | OLIVIER      | NULL         | 2019-05-13 | NULL |
+|  35 | JUDY        | DEAN         | NULL         | 2019-05-13 | NULL |
+|  36 | BURT        | DUKAKIS      | NULL         | 2019-05-13 | NULL |
+|  37 | VAL         | BOLGER       | NULL         | 2019-05-13 | NULL |
+|  38 | TOM         | MCKELLEN     | NULL         | 2019-05-13 | NULL |
+|  39 | GOLDIE      | BRODY        | NULL         | 2019-05-13 | NULL |
+|  40 | JOHNNY      | CAGE         | NULL         | 2019-05-13 | NULL |
+|  41 | JODIE       | DEGENERES    | NULL         | 2019-05-13 | NULL |
+|  42 | TOM         | MIRANDA      | NULL         | 2019-05-13 | NULL |
+|  43 | KIRK        | JOVOVICH     | NULL         | 2019-05-13 | NULL |
+|  44 | NICK        | STALLONE     | NULL         | 2019-05-13 | NULL |
+|  45 | REESE       | KILMER       | NULL         | 2019-05-13 | NULL |
+|  46 | PARKER      | GOLDBERG     | NULL         | 2019-05-13 | NULL |
+|  47 | JULIA       | BARRYMORE    | NULL         | 2019-05-13 | NULL |
+|  48 | FRANCES     | DAY-LEWIS    | NULL         | 2019-05-13 | NULL |
+|  49 | ANNE        | CRONYN       | NULL         | 2019-05-13 | NULL |
+|  50 | NATALIE     | HOPKINS      | NULL         | 2019-05-13 | NULL |
+|  51 | GARY        | PHOENIX      | NULL         | 2019-05-13 | NULL |
+|  52 | CARMEN      | HUNT         | NULL         | 2019-05-13 | NULL |
+|  53 | MENA        | TEMPLE       | NULL         | 2019-05-13 | NULL |
+|  54 | PENELOPE    | PINKETT      | NULL         | 2019-05-13 | NULL |
+|  55 | FAY         | KILMER       | NULL         | 2019-05-13 | NULL |
+|  56 | DAN         | HARRIS       | NULL         | 2019-05-13 | NULL |
+|  57 | JUDE        | CRUISE       | NULL         | 2019-05-13 | NULL |
+|  58 | CHRISTIAN   | AKROYD       | NULL         | 2019-05-13 | NULL |
+|  59 | DUSTIN      | TAUTOU       | NULL         | 2019-05-13 | NULL |
+|  60 | HENRY       | BERRY        | NULL         | 2019-05-13 | NULL |
+|  61 | CHRISTIAN   | NEESON       | NULL         | 2019-05-13 | NULL |
+|  62 | JAYNE       | NEESON       | NULL         | 2019-05-13 | NULL |
+|  63 | CAMERON     | WRAY         | NULL         | 2019-05-13 | NULL |
+|  64 | RAY         | JOHANSSON    | NULL         | 2019-05-13 | NULL |
+|  65 | ANGELA      | HUDSON       | NULL         | 2019-05-13 | NULL |
+|  66 | MARY        | TANDY        | NULL         | 2019-05-13 | NULL |
+|  67 | JESSICA     | BAILEY       | NULL         | 2019-05-13 | NULL |
+|  68 | RIP         | WINSLET      | NULL         | 2019-05-13 | NULL |
+|  69 | KENNETH     | PALTROW      | NULL         | 2019-05-13 | NULL |
+|  70 | MICHELLE    | MCCONAUGHEY  | NULL         | 2019-05-13 | NULL |
+|  71 | ADAM        | GRANT        | NULL         | 2019-05-13 | NULL |
+|  72 | SEAN        | WILLIAMS     | NULL         | 2019-05-13 | NULL |
+|  73 | GARY        | PENN         | NULL         | 2019-05-13 | NULL |
+|  74 | MILLA       | KEITEL       | NULL         | 2019-05-13 | NULL |
+|  75 | BURT        | POSEY        | NULL         | 2019-05-13 | NULL |
+|  76 | ANGELINA    | ASTAIRE      | NULL         | 2019-05-13 | NULL |
+|  77 | CARY        | MCCONAUGHEY  | NULL         | 2019-05-13 | NULL |
+|  78 | GROUCHO     | SINATRA      | NULL         | 2019-05-13 | NULL |
+|  79 | MAE         | HOFFMAN      | NULL         | 2019-05-13 | NULL |
+|  80 | RALPH       | CRUZ         | NULL         | 2019-05-13 | NULL |
+|  81 | SCARLETT    | DAMON        | NULL         | 2019-05-13 | NULL |
+|  82 | WOODY       | JOLIE        | NULL         | 2019-05-13 | NULL |
+|  83 | BEN         | WILLIS       | NULL         | 2019-05-13 | NULL |
+|  84 | JAMES       | PITT         | NULL         | 2019-05-13 | NULL |
+|  85 | MINNIE      | ZELLWEGER    | NULL         | 2019-05-13 | NULL |
+|  86 | GREG        | CHAPLIN      | NULL         | 2019-05-13 | NULL |
+|  87 | SPENCER     | PECK         | NULL         | 2019-05-13 | NULL |
+|  88 | KENNETH     | PESCI        | NULL         | 2019-05-13 | NULL |
+|  89 | CHARLIZE    | DENCH        | NULL         | 2019-05-13 | NULL |
+|  90 | SEAN        | GUINESS      | NULL         | 2019-05-13 | NULL |
+|  91 | CHRISTOPHER | BERRY        | NULL         | 2019-05-13 | NULL |
+|  92 | KIRSTEN     | AKROYD       | NULL         | 2019-05-13 | NULL |
+|  93 | ELLEN       | PRESLEY      | NULL         | 2019-05-13 | NULL |
+|  94 | KENNETH     | TORN         | NULL         | 2019-05-13 | NULL |
+|  95 | DARYL       | WAHLBERG     | NULL         | 2019-05-13 | NULL |
+|  96 | GENE        | WILLIS       | NULL         | 2019-05-13 | NULL |
+|  97 | MEG         | HAWKE        | NULL         | 2019-05-13 | NULL |
+|  98 | CHRIS       | BRIDGES      | NULL         | 2019-05-13 | NULL |
+|  99 | JIM         | MOSTEL       | NULL         | 2019-05-13 | NULL |
+| 100 | SPENCER     | DEPP         | NULL         | 2019-05-13 | NULL |
+| 101 | SUSAN       | DAVIS        | NULL         | 2019-05-13 | NULL |
+| 102 | WALTER      | TORN         | NULL         | 2019-05-13 | NULL |
+| 103 | MATTHEW     | LEIGH        | NULL         | 2019-05-13 | NULL |
+| 104 | PENELOPE    | CRONYN       | NULL         | 2019-05-13 | NULL |
+| 105 | SIDNEY      | CROWE        | NULL         | 2019-05-13 | NULL |
+| 106 | GROUCHO     | DUNST        | NULL         | 2019-05-13 | NULL |
+| 107 | GINA        | DEGENERES    | NULL         | 2019-05-13 | NULL |
+| 108 | WARREN      | NOLTE        | NULL         | 2019-05-13 | NULL |
+| 109 | SYLVESTER   | DERN         | NULL         | 2019-05-13 | NULL |
+| 110 | SUSAN       | DAVIS        | NULL         | 2019-05-13 | NULL |
+| 111 | CAMERON     | ZELLWEGER    | NULL         | 2019-05-13 | NULL |
+| 112 | RUSSELL     | BACALL       | NULL         | 2019-05-13 | NULL |
+| 113 | MORGAN      | HOPKINS      | NULL         | 2019-05-13 | NULL |
+| 114 | MORGAN      | MCDORMAND    | NULL         | 2019-05-13 | NULL |
+| 115 | HARRISON    | BALE         | NULL         | 2019-05-13 | NULL |
+| 116 | DAN         | STREEP       | NULL         | 2019-05-13 | NULL |
+| 117 | RENEE       | TRACY        | NULL         | 2019-05-13 | NULL |
+| 118 | CUBA        | ALLEN        | NULL         | 2019-05-13 | NULL |
+| 119 | WARREN      | JACKMAN      | NULL         | 2019-05-13 | NULL |
+| 120 | PENELOPE    | MONROE       | NULL         | 2019-05-13 | NULL |
+| 121 | LIZA        | BERGMAN      | NULL         | 2019-05-13 | NULL |
+| 122 | SALMA       | NOLTE        | NULL         | 2019-05-13 | NULL |
+| 123 | JULIANNE    | DENCH        | NULL         | 2019-05-13 | NULL |
+| 124 | SCARLETT    | BENING       | NULL         | 2019-05-13 | NULL |
+| 125 | ALBERT      | NOLTE        | NULL         | 2019-05-13 | NULL |
+| 126 | FRANCES     | TOMEI        | NULL         | 2019-05-13 | NULL |
+| 127 | KEVIN       | GARLAND      | NULL         | 2019-05-13 | NULL |
+| 128 | CATE        | MCQUEEN      | NULL         | 2019-05-13 | NULL |
+| 129 | DARYL       | CRAWFORD     | NULL         | 2019-05-13 | NULL |
+| 130 | GRETA       | KEITEL       | NULL         | 2019-05-13 | NULL |
+| 131 | JANE        | JACKMAN      | NULL         | 2019-05-13 | NULL |
+| 132 | ADAM        | HOPPER       | NULL         | 2019-05-13 | NULL |
+| 133 | RICHARD     | PENN         | NULL         | 2019-05-13 | NULL |
+| 134 | GENE        | HOPKINS      | NULL         | 2019-05-13 | NULL |
+| 135 | RITA        | REYNOLDS     | NULL         | 2019-05-13 | NULL |
+| 136 | ED          | MANSFIELD    | NULL         | 2019-05-13 | NULL |
+| 137 | MORGAN      | WILLIAMS     | NULL         | 2019-05-13 | NULL |
+| 138 | LUCILLE     | DEE          | NULL         | 2019-05-13 | NULL |
+| 139 | EWAN        | GOODING      | NULL         | 2019-05-13 | NULL |
+| 140 | WHOOPI      | HURT         | NULL         | 2019-05-13 | NULL |
+| 141 | CATE        | HARRIS       | NULL         | 2019-05-13 | NULL |
+| 142 | JADA        | RYDER        | NULL         | 2019-05-13 | NULL |
+| 143 | RIVER       | DEAN         | NULL         | 2019-05-13 | NULL |
+| 144 | ANGELA      | WITHERSPOON  | NULL         | 2019-05-13 | NULL |
+| 145 | KIM         | ALLEN        | NULL         | 2019-05-13 | NULL |
+| 146 | ALBERT      | JOHANSSON    | NULL         | 2019-05-13 | NULL |
+| 147 | FAY         | WINSLET      | NULL         | 2019-05-13 | NULL |
+| 148 | EMILY       | DEE          | NULL         | 2019-05-13 | NULL |
+| 149 | RUSSELL     | TEMPLE       | NULL         | 2019-05-13 | NULL |
+| 150 | JAYNE       | NOLTE        | NULL         | 2019-05-13 | NULL |
+| 151 | GEOFFREY    | HESTON       | NULL         | 2019-05-13 | NULL |
+| 152 | BEN         | HARRIS       | NULL         | 2019-05-13 | NULL |
+| 153 | MINNIE      | KILMER       | NULL         | 2019-05-13 | NULL |
+| 154 | MERYL       | GIBSON       | NULL         | 2019-05-13 | NULL |
+| 155 | IAN         | TANDY        | NULL         | 2019-05-13 | NULL |
+| 156 | FAY         | WOOD         | NULL         | 2019-05-13 | NULL |
+| 157 | GRETA       | MALDEN       | NULL         | 2019-05-13 | NULL |
+| 158 | VIVIEN      | BASINGER     | NULL         | 2019-05-13 | NULL |
+| 159 | LAURA       | BRODY        | NULL         | 2019-05-13 | NULL |
+| 160 | CHRIS       | DEPP         | NULL         | 2019-05-13 | NULL |
+| 161 | HARVEY      | HOPE         | NULL         | 2019-05-13 | NULL |
+| 162 | OPRAH       | KILMER       | NULL         | 2019-05-13 | NULL |
+| 163 | CHRISTOPHER | WEST         | NULL         | 2019-05-13 | NULL |
+| 164 | HUMPHREY    | WILLIS       | NULL         | 2019-05-13 | NULL |
+| 165 | AL          | GARLAND      | NULL         | 2019-05-13 | NULL |
+| 166 | NICK        | DEGENERES    | NULL         | 2019-05-13 | NULL |
+| 167 | LAURENCE    | BULLOCK      | NULL         | 2019-05-13 | NULL |
+| 168 | WILL        | WILSON       | NULL         | 2019-05-13 | NULL |
+| 169 | KENNETH     | HOFFMAN      | NULL         | 2019-05-13 | NULL |
+| 170 | MENA        | HOPPER       | NULL         | 2019-05-13 | NULL |
+| 171 | OLYMPIA     | PFEIFFER     | NULL         | 2019-05-13 | NULL |
+| 172 | GROUCHO     | WILLIAMS     | NULL         | 2019-05-13 | NULL |
+| 173 | ALAN        | DREYFUSS     | NULL         | 2019-05-13 | NULL |
+| 174 | MICHAEL     | BENING       | NULL         | 2019-05-13 | NULL |
+| 175 | WILLIAM     | HACKMAN      | NULL         | 2019-05-13 | NULL |
+| 176 | JON         | CHASE        | NULL         | 2019-05-13 | NULL |
+| 177 | GENE        | MCKELLEN     | NULL         | 2019-05-13 | NULL |
+| 178 | LISA        | MONROE       | NULL         | 2019-05-13 | NULL |
+| 179 | ED          | GUINESS      | NULL         | 2019-05-13 | NULL |
+| 180 | JEFF        | SILVERSTONE  | NULL         | 2019-05-13 | NULL |
+| 181 | MATTHEW     | CARREY       | NULL         | 2019-05-13 | NULL |
+| 182 | DEBBIE      | AKROYD       | NULL         | 2019-05-13 | NULL |
+| 183 | RUSSELL     | CLOSE        | NULL         | 2019-05-13 | NULL |
+| 184 | HUMPHREY    | GARLAND      | NULL         | 2019-05-13 | NULL |
+| 185 | MICHAEL     | BOLGER       | NULL         | 2019-05-13 | NULL |
+| 186 | JULIA       | ZELLWEGER    | NULL         | 2019-05-13 | NULL |
+| 187 | RENEE       | BALL         | NULL         | 2019-05-13 | NULL |
+| 188 | ROCK        | DUKAKIS      | NULL         | 2019-05-13 | NULL |
+| 189 | CUBA        | BIRCH        | NULL         | 2019-05-13 | NULL |
+| 190 | AUDREY      | BAILEY       | NULL         | 2019-05-13 | NULL |
+| 191 | GREGORY     | GOODING      | NULL         | 2019-05-13 | NULL |
+| 192 | JOHN        | SUVARI       | NULL         | 2019-05-13 | NULL |
+| 193 | BURT        | TEMPLE       | NULL         | 2019-05-13 | NULL |
+| 194 | MERYL       | ALLEN        | NULL         | 2019-05-13 | NULL |
+| 195 | JAYNE       | SILVERSTONE  | NULL         | 2019-05-13 | NULL |
+| 196 | BELA        | WALKEN       | NULL         | 2019-05-13 | NULL |
+| 197 | REESE       | WEST         | NULL         | 2019-05-13 | NULL |
+| 198 | MARY        | KEITEL       | NULL         | 2019-05-13 | NULL |
+| 199 | JULIA       | FAWCETT      | NULL         | 2019-05-13 | NULL |
+| 200 | THORA       | TEMPLE       | NULL         | 2019-05-13 | NULL |
+|   0 | Nallely     | Trevizo      | NULL         | 2019-05-13 | NULL |
+| 120 | Diego Aaron | Portillo     | Hernandez    | 1998-01-13 | NULL |
++-----+-------------+--------------+--------------+------------+------+
+202 rows in set (0.0027 sec)
+
+ MySQL  localhost:3306 ssl  eva_3  SQL > call asignar_rfc();
+Query OK, 0 rows affected (0.4437 sec)
+
+ MySQL  localhost:3306 ssl  eva_3  SQL > call asignar_rfc();
+Query OK, 0 rows affected (28.7174 sec)
+
+ MySQL  localhost:3306 ssl  eva_3  SQL > select * from actores_2;
++-----+-------------+--------------+--------------+------------+---------------+
+| id  | nombre      | apellido     | apellido_mat | fecha_nac  | rfc           |
++-----+-------------+--------------+--------------+------------+---------------+
+|   1 | PENELOPE    | GUINESS      | NULL         | 2019-05-13 | GUXP190513925 |
+|   2 | NICK        | WAHLBERG     | NULL         | 2019-05-13 | WAXN190513855 |
+|   3 | ED          | CHASE        | NULL         | 2019-05-13 | CHXE190513500 |
+|   4 | JENNIFER    | DAVIS        | NULL         | 2019-05-13 | DAXJ190513937 |
+|   5 | JOHNNY      | LOLLOBRIGIDA | NULL         | 2019-05-13 | LOXJ190513183 |
+|   6 | BETTE       | NICHOLSON    | NULL         | 2019-05-13 | NIXB190513105 |
+|   7 | GRACE       | MOSTEL       | NULL         | 2019-05-13 | MOXG190513977 |
+|   8 | MATTHEW     | JOHANSSON    | NULL         | 2019-05-13 | JOXM190513571 |
+|   9 | JOE         | SWANK        | NULL         | 2019-05-13 | SWXJ190513924 |
+|  10 | CHRISTIAN   | GABLE        | NULL         | 2019-05-13 | GAXC190513909 |
+|  11 | ZERO        | CAGE         | NULL         | 2019-05-13 | CAXZ190513774 |
+|  12 | KARL        | BERRY        | NULL         | 2019-05-13 | BEXK190513142 |
+|  13 | UMA         | WOOD         | NULL         | 2019-05-13 | WOXU190513391 |
+|  14 | VIVIEN      | BERGEN       | NULL         | 2019-05-13 | BEXV190513526 |
+|  15 | CUBA        | OLIVIER      | NULL         | 2019-05-13 | OLXC190513458 |
+|  16 | FRED        | COSTNER      | NULL         | 2019-05-13 | COXF190513714 |
+|  17 | HELEN       | VOIGHT       | NULL         | 2019-05-13 | VOXH190513196 |
+|  18 | DAN         | TORN         | NULL         | 2019-05-13 | TOXD190513840 |
+|  19 | BOB         | FAWCETT      | NULL         | 2019-05-13 | FAXB190513611 |
+|  20 | LUCILLE     | TRACY        | NULL         | 2019-05-13 | TRXL190513537 |
+|  21 | KIRSTEN     | PALTROW      | NULL         | 2019-05-13 | PAXK190513851 |
+|  22 | ELVIS       | MARX         | NULL         | 2019-05-13 | MAXE190513646 |
+|  23 | SANDRA      | KILMER       | NULL         | 2019-05-13 | KIXS190513677 |
+|  24 | CAMERON     | STREEP       | NULL         | 2019-05-13 | STXC190513449 |
+|  25 | KEVIN       | BLOOM        | NULL         | 2019-05-13 | BLXK190513215 |
+|  26 | RIP         | CRAWFORD     | NULL         | 2019-05-13 | CRXR190513728 |
+|  27 | JULIA       | MCQUEEN      | NULL         | 2019-05-13 | MCXJ190513996 |
+|  28 | WOODY       | HOFFMAN      | NULL         | 2019-05-13 | HOXW190513794 |
+|  29 | ALEC        | WAYNE        | NULL         | 2019-05-13 | WAXA190513985 |
+|  30 | SANDRA      | PECK         | NULL         | 2019-05-13 | PEXS190513545 |
+|  31 | SISSY       | SOBIESKI     | NULL         | 2019-05-13 | SOXS190513768 |
+|  32 | TIM         | HACKMAN      | NULL         | 2019-05-13 | HAXT190513204 |
+|  33 | MILLA       | PECK         | NULL         | 2019-05-13 | PEXM190513719 |
+|  34 | AUDREY      | OLIVIER      | NULL         | 2019-05-13 | OLXA190513981 |
+|  35 | JUDY        | DEAN         | NULL         | 2019-05-13 | DEXJ190513749 |
+|  36 | BURT        | DUKAKIS      | NULL         | 2019-05-13 | DUXB190513804 |
+|  37 | VAL         | BOLGER       | NULL         | 2019-05-13 | BOXV190513773 |
+|  38 | TOM         | MCKELLEN     | NULL         | 2019-05-13 | MCXT190513453 |
+|  39 | GOLDIE      | BRODY        | NULL         | 2019-05-13 | BRXG190513948 |
+|  40 | JOHNNY      | CAGE         | NULL         | 2019-05-13 | CAXJ190513380 |
+|  41 | JODIE       | DEGENERES    | NULL         | 2019-05-13 | DEXJ190513056 |
+|  42 | TOM         | MIRANDA      | NULL         | 2019-05-13 | MIXT190513141 |
+|  43 | KIRK        | JOVOVICH     | NULL         | 2019-05-13 | JOXK190513538 |
+|  44 | NICK        | STALLONE     | NULL         | 2019-05-13 | STXN190513268 |
+|  45 | REESE       | KILMER       | NULL         | 2019-05-13 | KIXR190513725 |
+|  46 | PARKER      | GOLDBERG     | NULL         | 2019-05-13 | GOXP190513822 |
+|  47 | JULIA       | BARRYMORE    | NULL         | 2019-05-13 | BAXJ190513935 |
+|  48 | FRANCES     | DAY-LEWIS    | NULL         | 2019-05-13 | DAXF190513210 |
+|  49 | ANNE        | CRONYN       | NULL         | 2019-05-13 | CRXA190513244 |
+|  50 | NATALIE     | HOPKINS      | NULL         | 2019-05-13 | HOXN190513591 |
+|  51 | GARY        | PHOENIX      | NULL         | 2019-05-13 | PHXG190513223 |
+|  52 | CARMEN      | HUNT         | NULL         | 2019-05-13 | HUXC190513342 |
+|  53 | MENA        | TEMPLE       | NULL         | 2019-05-13 | TEXM190513041 |
+|  54 | PENELOPE    | PINKETT      | NULL         | 2019-05-13 | PIXP190513181 |
+|  55 | FAY         | KILMER       | NULL         | 2019-05-13 | KIXF190513781 |
+|  56 | DAN         | HARRIS       | NULL         | 2019-05-13 | HAXD190513364 |
+|  57 | JUDE        | CRUISE       | NULL         | 2019-05-13 | CRXJ190513477 |
+|  58 | CHRISTIAN   | AKROYD       | NULL         | 2019-05-13 | AKXC190513293 |
+|  59 | DUSTIN      | TAUTOU       | NULL         | 2019-05-13 | TAXD190513034 |
+|  60 | HENRY       | BERRY        | NULL         | 2019-05-13 | BEXH190513294 |
+|  61 | CHRISTIAN   | NEESON       | NULL         | 2019-05-13 | NEXC190513367 |
+|  62 | JAYNE       | NEESON       | NULL         | 2019-05-13 | NEXJ190513955 |
+|  63 | CAMERON     | WRAY         | NULL         | 2019-05-13 | WRXC190513675 |
+|  64 | RAY         | JOHANSSON    | NULL         | 2019-05-13 | JOXR190513510 |
+|  65 | ANGELA      | HUDSON       | NULL         | 2019-05-13 | HUXA190513524 |
+|  66 | MARY        | TANDY        | NULL         | 2019-05-13 | TAXM190513091 |
+|  67 | JESSICA     | BAILEY       | NULL         | 2019-05-13 | BAXJ190513884 |
+|  68 | RIP         | WINSLET      | NULL         | 2019-05-13 | WIXR190513147 |
+|  69 | KENNETH     | PALTROW      | NULL         | 2019-05-13 | PAXK190513084 |
+|  70 | MICHELLE    | MCCONAUGHEY  | NULL         | 2019-05-13 | MCXM190513980 |
+|  71 | ADAM        | GRANT        | NULL         | 2019-05-13 | GRXA190513648 |
+|  72 | SEAN        | WILLIAMS     | NULL         | 2019-05-13 | WIXS190513298 |
+|  73 | GARY        | PENN         | NULL         | 2019-05-13 | PEXG190513550 |
+|  74 | MILLA       | KEITEL       | NULL         | 2019-05-13 | KEXM190513855 |
+|  75 | BURT        | POSEY        | NULL         | 2019-05-13 | POXB190513625 |
+|  76 | ANGELINA    | ASTAIRE      | NULL         | 2019-05-13 | ASXA190513559 |
+|  77 | CARY        | MCCONAUGHEY  | NULL         | 2019-05-13 | MCXC190513922 |
+|  78 | GROUCHO     | SINATRA      | NULL         | 2019-05-13 | SIXG190513933 |
+|  79 | MAE         | HOFFMAN      | NULL         | 2019-05-13 | HOXM190513901 |
+|  80 | RALPH       | CRUZ         | NULL         | 2019-05-13 | CRXR190513707 |
+|  81 | SCARLETT    | DAMON        | NULL         | 2019-05-13 | DAXS190513832 |
+|  82 | WOODY       | JOLIE        | NULL         | 2019-05-13 | JOXW190513039 |
+|  83 | BEN         | WILLIS       | NULL         | 2019-05-13 | WIXB190513699 |
+|  84 | JAMES       | PITT         | NULL         | 2019-05-13 | PIXJ190513380 |
+|  85 | MINNIE      | ZELLWEGER    | NULL         | 2019-05-13 | ZEXM190513802 |
+|  86 | GREG        | CHAPLIN      | NULL         | 2019-05-13 | CHXG190513872 |
+|  87 | SPENCER     | PECK         | NULL         | 2019-05-13 | PEXS190513954 |
+|  88 | KENNETH     | PESCI        | NULL         | 2019-05-13 | PEXK190513152 |
+|  89 | CHARLIZE    | DENCH        | NULL         | 2019-05-13 | DEXC190513902 |
+|  90 | SEAN        | GUINESS      | NULL         | 2019-05-13 | GUXS190513054 |
+|  91 | CHRISTOPHER | BERRY        | NULL         | 2019-05-13 | BEXC190513565 |
+|  92 | KIRSTEN     | AKROYD       | NULL         | 2019-05-13 | AKXK190513662 |
+|  93 | ELLEN       | PRESLEY      | NULL         | 2019-05-13 | PRXE190513618 |
+|  94 | KENNETH     | TORN         | NULL         | 2019-05-13 | TOXK190513101 |
+|  95 | DARYL       | WAHLBERG     | NULL         | 2019-05-13 | WAXD190513654 |
+|  96 | GENE        | WILLIS       | NULL         | 2019-05-13 | WIXG190513968 |
+|  97 | MEG         | HAWKE        | NULL         | 2019-05-13 | HAXM190513877 |
+|  98 | CHRIS       | BRIDGES      | NULL         | 2019-05-13 | BRXC190513481 |
+|  99 | JIM         | MOSTEL       | NULL         | 2019-05-13 | MOXJ190513776 |
+| 100 | SPENCER     | DEPP         | NULL         | 2019-05-13 | DEXS190513435 |
+| 101 | SUSAN       | DAVIS        | NULL         | 2019-05-13 | DAXS190513850 |
+| 102 | WALTER      | TORN         | NULL         | 2019-05-13 | TOXW190513944 |
+| 103 | MATTHEW     | LEIGH        | NULL         | 2019-05-13 | LEXM190513169 |
+| 104 | PENELOPE    | CRONYN       | NULL         | 2019-05-13 | CRXP190513015 |
+| 105 | SIDNEY      | CROWE        | NULL         | 2019-05-13 | CRXS190513568 |
+| 106 | GROUCHO     | DUNST        | NULL         | 2019-05-13 | DUXG190513798 |
+| 107 | GINA        | DEGENERES    | NULL         | 2019-05-13 | DEXG190513284 |
+| 108 | WARREN      | NOLTE        | NULL         | 2019-05-13 | NOXW190513025 |
+| 109 | SYLVESTER   | DERN         | NULL         | 2019-05-13 | DEXS190513276 |
+| 110 | SUSAN       | DAVIS        | NULL         | 2019-05-13 | DAXS190513304 |
+| 111 | CAMERON     | ZELLWEGER    | NULL         | 2019-05-13 | ZEXC190513695 |
+| 112 | RUSSELL     | BACALL       | NULL         | 2019-05-13 | BAXR190513563 |
+| 113 | MORGAN      | HOPKINS      | NULL         | 2019-05-13 | HOXM190513729 |
+| 114 | MORGAN      | MCDORMAND    | NULL         | 2019-05-13 | MCXM190513957 |
+| 115 | HARRISON    | BALE         | NULL         | 2019-05-13 | BAXH190513599 |
+| 116 | DAN         | STREEP       | NULL         | 2019-05-13 | STXD190513124 |
+| 117 | RENEE       | TRACY        | NULL         | 2019-05-13 | TRXR190513826 |
+| 118 | CUBA        | ALLEN        | NULL         | 2019-05-13 | ALXC190513755 |
+| 119 | WARREN      | JACKMAN      | NULL         | 2019-05-13 | JAXW190513299 |
+| 120 | PENELOPE    | MONROE       | NULL         | 2019-05-13 | PoHD980113676 |
+| 121 | LIZA        | BERGMAN      | NULL         | 2019-05-13 | BEXL190513230 |
+| 122 | SALMA       | NOLTE        | NULL         | 2019-05-13 | NOXS190513252 |
+| 123 | JULIANNE    | DENCH        | NULL         | 2019-05-13 | DEXJ190513573 |
+| 124 | SCARLETT    | BENING       | NULL         | 2019-05-13 | BEXS190513109 |
+| 125 | ALBERT      | NOLTE        | NULL         | 2019-05-13 | NOXA190513826 |
+| 126 | FRANCES     | TOMEI        | NULL         | 2019-05-13 | TOXF190513803 |
+| 127 | KEVIN       | GARLAND      | NULL         | 2019-05-13 | GAXK190513540 |
+| 128 | CATE        | MCQUEEN      | NULL         | 2019-05-13 | MCXC190513290 |
+| 129 | DARYL       | CRAWFORD     | NULL         | 2019-05-13 | CRXD190513831 |
+| 130 | GRETA       | KEITEL       | NULL         | 2019-05-13 | KEXG190513287 |
+| 131 | JANE        | JACKMAN      | NULL         | 2019-05-13 | JAXJ190513941 |
+| 132 | ADAM        | HOPPER       | NULL         | 2019-05-13 | HOXA190513846 |
+| 133 | RICHARD     | PENN         | NULL         | 2019-05-13 | PEXR190513407 |
+| 134 | GENE        | HOPKINS      | NULL         | 2019-05-13 | HOXG190513498 |
+| 135 | RITA        | REYNOLDS     | NULL         | 2019-05-13 | REXR190513267 |
+| 136 | ED          | MANSFIELD    | NULL         | 2019-05-13 | MAXE190513842 |
+| 137 | MORGAN      | WILLIAMS     | NULL         | 2019-05-13 | WIXM190513411 |
+| 138 | LUCILLE     | DEE          | NULL         | 2019-05-13 | DEXL190513527 |
+| 139 | EWAN        | GOODING      | NULL         | 2019-05-13 | GOXE190513404 |
+| 140 | WHOOPI      | HURT         | NULL         | 2019-05-13 | HUXW190513438 |
+| 141 | CATE        | HARRIS       | NULL         | 2019-05-13 | HAXC190513977 |
+| 142 | JADA        | RYDER        | NULL         | 2019-05-13 | RYXJ190513575 |
+| 143 | RIVER       | DEAN         | NULL         | 2019-05-13 | DEXR190513944 |
+| 144 | ANGELA      | WITHERSPOON  | NULL         | 2019-05-13 | WIXA190513997 |
+| 145 | KIM         | ALLEN        | NULL         | 2019-05-13 | ALXK190513151 |
+| 146 | ALBERT      | JOHANSSON    | NULL         | 2019-05-13 | JOXA190513766 |
+| 147 | FAY         | WINSLET      | NULL         | 2019-05-13 | WIXF190513376 |
+| 148 | EMILY       | DEE          | NULL         | 2019-05-13 | DEXE190513584 |
+| 149 | RUSSELL     | TEMPLE       | NULL         | 2019-05-13 | TEXR190513793 |
+| 150 | JAYNE       | NOLTE        | NULL         | 2019-05-13 | NOXJ190513211 |
+| 151 | GEOFFREY    | HESTON       | NULL         | 2019-05-13 | HEXG190513678 |
+| 152 | BEN         | HARRIS       | NULL         | 2019-05-13 | HAXB190513756 |
+| 153 | MINNIE      | KILMER       | NULL         | 2019-05-13 | KIXM190513746 |
+| 154 | MERYL       | GIBSON       | NULL         | 2019-05-13 | GIXM190513466 |
+| 155 | IAN         | TANDY        | NULL         | 2019-05-13 | TAXI190513089 |
+| 156 | FAY         | WOOD         | NULL         | 2019-05-13 | WOXF190513047 |
+| 157 | GRETA       | MALDEN       | NULL         | 2019-05-13 | MAXG190513971 |
+| 158 | VIVIEN      | BASINGER     | NULL         | 2019-05-13 | BAXV190513715 |
+| 159 | LAURA       | BRODY        | NULL         | 2019-05-13 | BRXL190513660 |
+| 160 | CHRIS       | DEPP         | NULL         | 2019-05-13 | DEXC190513154 |
+| 161 | HARVEY      | HOPE         | NULL         | 2019-05-13 | HOXH190513794 |
+| 162 | OPRAH       | KILMER       | NULL         | 2019-05-13 | KIXO190513509 |
+| 163 | CHRISTOPHER | WEST         | NULL         | 2019-05-13 | WEXC190513162 |
+| 164 | HUMPHREY    | WILLIS       | NULL         | 2019-05-13 | WIXH190513283 |
+| 165 | AL          | GARLAND      | NULL         | 2019-05-13 | GAXA190513928 |
+| 166 | NICK        | DEGENERES    | NULL         | 2019-05-13 | DEXN190513792 |
+| 167 | LAURENCE    | BULLOCK      | NULL         | 2019-05-13 | BUXL190513179 |
+| 168 | WILL        | WILSON       | NULL         | 2019-05-13 | WIXW190513517 |
+| 169 | KENNETH     | HOFFMAN      | NULL         | 2019-05-13 | HOXK190513051 |
+| 170 | MENA        | HOPPER       | NULL         | 2019-05-13 | HOXM190513703 |
+| 171 | OLYMPIA     | PFEIFFER     | NULL         | 2019-05-13 | PFXO190513364 |
+| 172 | GROUCHO     | WILLIAMS     | NULL         | 2019-05-13 | WIXG190513710 |
+| 173 | ALAN        | DREYFUSS     | NULL         | 2019-05-13 | DRXA190513458 |
+| 174 | MICHAEL     | BENING       | NULL         | 2019-05-13 | BEXM190513160 |
+| 175 | WILLIAM     | HACKMAN      | NULL         | 2019-05-13 | HAXW190513429 |
+| 176 | JON         | CHASE        | NULL         | 2019-05-13 | CHXJ190513663 |
+| 177 | GENE        | MCKELLEN     | NULL         | 2019-05-13 | MCXG190513028 |
+| 178 | LISA        | MONROE       | NULL         | 2019-05-13 | MOXL190513153 |
+| 179 | ED          | GUINESS      | NULL         | 2019-05-13 | GUXE190513679 |
+| 180 | JEFF        | SILVERSTONE  | NULL         | 2019-05-13 | SIXJ190513940 |
+| 181 | MATTHEW     | CARREY       | NULL         | 2019-05-13 | CAXM190513662 |
+| 182 | DEBBIE      | AKROYD       | NULL         | 2019-05-13 | AKXD190513491 |
+| 183 | RUSSELL     | CLOSE        | NULL         | 2019-05-13 | CLXR190513471 |
+| 184 | HUMPHREY    | GARLAND      | NULL         | 2019-05-13 | GAXH190513880 |
+| 185 | MICHAEL     | BOLGER       | NULL         | 2019-05-13 | BOXM190513990 |
+| 186 | JULIA       | ZELLWEGER    | NULL         | 2019-05-13 | ZEXJ190513309 |
+| 187 | RENEE       | BALL         | NULL         | 2019-05-13 | BAXR190513575 |
+| 188 | ROCK        | DUKAKIS      | NULL         | 2019-05-13 | DUXR190513949 |
+| 189 | CUBA        | BIRCH        | NULL         | 2019-05-13 | BIXC190513020 |
+| 190 | AUDREY      | BAILEY       | NULL         | 2019-05-13 | BAXA190513256 |
+| 191 | GREGORY     | GOODING      | NULL         | 2019-05-13 | GOXG190513219 |
+| 192 | JOHN        | SUVARI       | NULL         | 2019-05-13 | SUXJ190513327 |
+| 193 | BURT        | TEMPLE       | NULL         | 2019-05-13 | TEXB190513981 |
+| 194 | MERYL       | ALLEN        | NULL         | 2019-05-13 | ALXM190513922 |
+| 195 | JAYNE       | SILVERSTONE  | NULL         | 2019-05-13 | SIXJ190513668 |
+| 196 | BELA        | WALKEN       | NULL         | 2019-05-13 | WAXB190513574 |
+| 197 | REESE       | WEST         | NULL         | 2019-05-13 | WEXR190513865 |
+| 198 | MARY        | KEITEL       | NULL         | 2019-05-13 | KEXM190513604 |
+| 199 | JULIA       | FAWCETT      | NULL         | 2019-05-13 | FAXJ190513426 |
+| 200 | THORA       | TEMPLE       | NULL         | 2019-05-13 | TEXT190513320 |
+|   0 | Nallely     | Trevizo      | NULL         | 2019-05-13 | TrXN190513323 |
+| 120 | Diego Aaron | Portillo     | Hernandez    | 1998-01-13 | PoHD980113591 |
++-----+-------------+--------------+--------------+------------+---------------+
+202 rows in set (0.0502 sec)
+
+ MySQL  localhost:3306 ssl  eva_3  SQL >

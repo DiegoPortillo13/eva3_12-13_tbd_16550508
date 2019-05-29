@@ -1,0 +1,195 @@
+
+C:\Users\Diego
+? mysqlsh
+MySQL Shell 8.0.13
+
+Copyright (c) 2016, 2018, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type '\help' or '\?' for help; '\quit' to exit.
+
+
+ MySQL  JS > \sql
+Switching to SQL mode... Commands end with ;
+
+ MySQL  SQL > \connect --mc root@localhost
+Creating a Classic session to 'root@localhost'
+Fetching schema names for autocompletion... Press ^C to stop.
+Your MySQL connection id is 12
+Server version: 8.0.13 MySQL Community Server - GPL
+No default schema selected; type \use <schema> to set one.
+
+ MySQL  localhost:3306 ssl  SQL > \use examen_3
+Default schema set to `examen_3`.
+Fetching table and column names from `examen_3` for auto-completion... Press ^C to stop.
+
+ MySQL  localhost:3306 ssl  examen_3  SQL > show tables;
++--------------------+
+| Tables_in_examen_3 |
++--------------------+
+| c_actor            |
+| c_film             |
+| c_film_act         |
+| c_language         |
++--------------------+
+4 rows in set (0.1958 sec)
+
+ MySQL  localhost:3306 ssl  examen_3  SQL > select * from c_actor limit 5;
++----------+------------+--------------+---------------------+
+| actor_id | first_name | last_name    | last_update         |
++----------+------------+--------------+---------------------+
+|        1 | PENELOPE   | GUINESS      | 2006-02-15 04:34:33 |
+|        2 | NICK       | WAHLBERG     | 2006-02-15 04:34:33 |
+|        3 | ED         | CHASE        | 2006-02-15 04:34:33 |
+|        4 | JENNIFER   | DAVIS        | 2006-02-15 04:34:33 |
+|        5 | JOHNNY     | LOLLOBRIGIDA | 2006-02-15 04:34:33 |
++----------+------------+--------------+---------------------+
+5 rows in set (0.0017 sec)
+
+ MySQL  localhost:3306 ssl  examen_3  SQL > select * from c_film limit 5;
++---------+------------------+-----------------------------------------------------------------------------------------------------------------------+--------------+-------------+----------------------+-----------------+-------------+--------+------------------+--------+----------------------------------+---------------------+
+| film_id | title            | description                                                                                                           | release_year | language_id | original_language_id | rental_duration | rental_rate | length | replacement_cost | rating | special_features                 | last_update         |
++---------+------------------+-----------------------------------------------------------------------------------------------------------------------+--------------+-------------+----------------------+-----------------+-------------+--------+------------------+--------+----------------------------------+---------------------+
+|       1 | ACADEMY DINOSAUR | A Epic Drama of a Feminist And a Mad Scientist who must Battle a Teacher in The Canadian Rockies                      |         2006 |
+        1 |                 NULL |               6 |        0.99 |     86 |            20.99 | PG     | Deleted Scenes,Behind the Scenes | 2019-05-23 10:45:46 |
+|       2 | ACE GOLDFINGER   | A Astounding Epistle of a Database Administrator And a Explorer who must Find a Car in Ancient China                  |         2006 |
+        1 |                 NULL |               3 |        4.99 |     48 |            12.99 | G      | Trailers,Deleted Scenes          | 2019-05-23 10:45:46 |
+|       3 | ADAPTATION HOLES | A Astounding Reflection of a Lumberjack And a Car who must Sink a Lumberjack in A Baloon Factory                      |         2006 |
+        1 |                 NULL |               7 |        2.99 |     50 |            18.99 | NC-17  | Trailers,Deleted Scenes          | 2019-05-23 10:45:46 |
+|       4 | AFFAIR PREJUDICE | A Fanciful Documentary of a Frisbee And a Lumberjack who must Chase a Monkey in A Shark Tank                          |         2006 |
+        1 |                 NULL |               5 |        2.99 |    117 |            26.99 | G      | Commentaries,Behind the Scenes   | 2019-05-23 10:45:46 |
+|       5 | AFRICAN EGG      | A Fast-Paced Documentary of a Pastry Chef And a Dentist who must Pursue a Forensic Psychologist in The Gulf of Mexico |         2006 |
+        1 |                 NULL |               6 |        2.99 |    130 |            22.99 | G      | Deleted Scenes                   | 2019-05-23 10:45:46 |
++---------+------------------+-----------------------------------------------------------------------------------------------------------------------+--------------+-------------+----------------------+-----------------+-------------+--------+------------------+--------+----------------------------------+---------------------+
+5 rows in set (0.0019 sec)
+
+ MySQL  localhost:3306 ssl  examen_3  SQL > delete from c_actor where actor_id = 1;
+ERROR: 1644 (45000):  No puedes borrarlo prro :n
+
+ MySQL  localhost:3306 ssl  examen_3  SQL > update c_actor
+                                         -> set actor_id = 1000
+                                         -> where actor_id = 1;
+Query OK, 1 row affected (0.1959 sec)
+
+Rows matched: 1  Changed: 1  Warnings: 0
+
+ MySQL  localhost:3306 ssl  examen_3  SQL > select * from c_film limit 5;
++---------+------------------+-----------------------------------------------------------------------------------------------------------------------+--------------+-------------+----------------------+-----------------+-------------+--------+------------------+--------+----------------------------------+---------------------+
+| film_id | title            | description                                                                                                           | release_year | language_id | original_language_id | rental_duration | rental_rate | length | replacement_cost | rating | special_features                 | last_update         |
++---------+------------------+-----------------------------------------------------------------------------------------------------------------------+--------------+-------------+----------------------+-----------------+-------------+--------+------------------+--------+----------------------------------+---------------------+
+|       1 | ACADEMY DINOSAUR | A Epic Drama of a Feminist And a Mad Scientist who must Battle a Teacher in The Canadian Rockies                      |         2006 |
+        1 |                 NULL |               6 |        0.99 |     86 |            20.99 | PG     | Deleted Scenes,Behind the Scenes | 2019-05-23 10:45:46 |
+|       2 | ACE GOLDFINGER   | A Astounding Epistle of a Database Administrator And a Explorer who must Find a Car in Ancient China                  |         2006 |
+        1 |                 NULL |               3 |        4.99 |     48 |            12.99 | G      | Trailers,Deleted Scenes          | 2019-05-23 10:45:46 |
+|       3 | ADAPTATION HOLES | A Astounding Reflection of a Lumberjack And a Car who must Sink a Lumberjack in A Baloon Factory                      |         2006 |
+        1 |                 NULL |               7 |        2.99 |     50 |            18.99 | NC-17  | Trailers,Deleted Scenes          | 2019-05-23 10:45:46 |
+|       4 | AFFAIR PREJUDICE | A Fanciful Documentary of a Frisbee And a Lumberjack who must Chase a Monkey in A Shark Tank                          |         2006 |
+        1 |                 NULL |               5 |        2.99 |    117 |            26.99 | G      | Commentaries,Behind the Scenes   | 2019-05-23 10:45:46 |
+|       5 | AFRICAN EGG      | A Fast-Paced Documentary of a Pastry Chef And a Dentist who must Pursue a Forensic Psychologist in The Gulf of Mexico |         2006 |
+        1 |                 NULL |               6 |        2.99 |    130 |            22.99 | G      | Deleted Scenes                   | 2019-05-23 10:45:46 |
++---------+------------------+-----------------------------------------------------------------------------------------------------------------------+--------------+-------------+----------------------+-----------------+-------------+--------+------------------+--------+----------------------------------+---------------------+
+5 rows in set (0.0011 sec)
+
+ MySQL  localhost:3306 ssl  examen_3  SQL > select * from c_actor limit 5;
++----------+------------+--------------+---------------------+
+| actor_id | first_name | last_name    | last_update         |
++----------+------------+--------------+---------------------+
+|     1000 | PENELOPE   | GUINESS      | 2019-05-23 12:12:59 |
+|        2 | NICK       | WAHLBERG     | 2006-02-15 04:34:33 |
+|        3 | ED         | CHASE        | 2006-02-15 04:34:33 |
+|        4 | JENNIFER   | DAVIS        | 2006-02-15 04:34:33 |
+|        5 | JOHNNY     | LOLLOBRIGIDA | 2006-02-15 04:34:33 |
++----------+------------+--------------+---------------------+
+5 rows in set (0.0011 sec)
+
+ MySQL  localhost:3306 ssl  examen_3  SQL > delete from c_film where actor_id = 1;
+ERROR: 1054 (42S22): Unknown column 'actor_id' in 'where clause'
+
+ MySQL  localhost:3306 ssl  examen_3  SQL > delete from c_film where film_id = 1;
+ERROR: 1644 (45000):  No puedes borrarlo prro :n
+
+ MySQL  localhost:3306 ssl  examen_3  SQL > select * from c_film_act where actor_id = 1000;
++----------+---------+---------------------+
+| actor_id | film_id | last_update         |
++----------+---------+---------------------+
+|     1000 |       1 | 2019-05-23 12:12:59 |
+|     1000 |      23 | 2019-05-23 12:12:59 |
+|     1000 |      25 | 2019-05-23 12:12:59 |
+|     1000 |     106 | 2019-05-23 12:12:59 |
+|     1000 |     140 | 2019-05-23 12:12:59 |
+|     1000 |     166 | 2019-05-23 12:12:59 |
+|     1000 |     277 | 2019-05-23 12:12:59 |
+|     1000 |     361 | 2019-05-23 12:12:59 |
+|     1000 |     438 | 2019-05-23 12:12:59 |
+|     1000 |     499 | 2019-05-23 12:12:59 |
+|     1000 |     506 | 2019-05-23 12:12:59 |
+|     1000 |     509 | 2019-05-23 12:12:59 |
+|     1000 |     605 | 2019-05-23 12:12:59 |
+|     1000 |     635 | 2019-05-23 12:12:59 |
+|     1000 |     749 | 2019-05-23 12:12:59 |
+|     1000 |     832 | 2019-05-23 12:12:59 |
+|     1000 |     939 | 2019-05-23 12:12:59 |
+|     1000 |     970 | 2019-05-23 12:12:59 |
+|     1000 |     980 | 2019-05-23 12:12:59 |
++----------+---------+---------------------+
+19 rows in set (0.0121 sec)
+
+ MySQL  localhost:3306 ssl  examen_3  SQL > show create table c_actor;
++---------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Table   | Create Table
+
+                        |
++---------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| c_actor | CREATE TABLE `c_actor` (
+  `actor_id` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `first_name` varchar(45) CHARACTER SET utf8 NOT NULL,
+  `last_name` varchar(45) CHARACTER SET utf8 NOT NULL,
+  `last_update` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci |
++---------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+1 row in set (0.0016 sec)
+
+ MySQL  localhost:3306 ssl  examen_3  SQL > show create table c_film_act;
++------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Table      | Create Table
+                                                                                                                      |
++------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| c_film_act | CREATE TABLE `c_film_act` (
+  `actor_id` smallint(5) unsigned NOT NULL,
+  `film_id` smallint(5) unsigned NOT NULL,
+  `last_update` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci |
++------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+1 row in set (0.0012 sec)
+
+ MySQL  localhost:3306 ssl  examen_3  SQL > show create table c_film;
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Table  | Create Table
+
+
+
+
+                                                                 |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| c_film | CREATE TABLE `c_film` (
+  `film_id` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `title` varchar(255) CHARACTER SET utf8 NOT NULL,
+  `description` text CHARACTER SET utf8,
+  `release_year` year(4) DEFAULT NULL,
+  `language_id` tinyint(3) unsigned NOT NULL,
+  `original_language_id` tinyint(3) unsigned DEFAULT NULL,
+  `rental_duration` tinyint(3) unsigned NOT NULL DEFAULT '3',
+  `rental_rate` decimal(4,2) NOT NULL DEFAULT '4.99',
+  `length` smallint(5) unsigned DEFAULT NULL,
+  `replacement_cost` decimal(5,2) NOT NULL DEFAULT '19.99',
+  `rating` enum('G','PG','PG-13','R','NC-17') CHARACTER SET utf8 DEFAULT 'G',
+  `special_features` set('Trailers','Commentaries','Deleted Scenes','Behind the Scenes') CHARACTER SET utf8 DEFAULT NULL,
+  `last_update` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+1 row in set (0.0011 sec)
+
+ MySQL  localhost:3306 ssl  examen_3  SQL >

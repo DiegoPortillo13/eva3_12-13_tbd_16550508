@@ -1,0 +1,174 @@
+Funciones 
+	*No pueden regresar consultas
+
+
+ MySQL  localhost:3306 ssl  eva_3  SQL > set global
+                                      -> log_bin_trust_function_creators = 1;
+Query OK, 0 rows affected (0.0009 sec)
+
+ MySQL  localhost:3306 ssl  eva_3  SQL > selext regresa_uno();
+ERROR: 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'selext regresa_uno()' at line 1
+
+ MySQL  localhost:3306 ssl  eva_3  SQL > select regresa_uno();
++---------------+
+| regresa_uno() |
++---------------+
+|             1 |
++---------------+
+1 row in set (0.1203 sec)
+
+ MySQL  localhost:3306 ssl  eva_3  SQL > create table copia_actor as select * from sakila.actor;
+Query OK, 200 rows affected (2.4283 sec)
+
+Records: 200  Duplicates: 0  Warnings: 0
+
+ MySQL  localhost:3306 ssl  eva_3  SQL > show tables;
++-----------------+
+| Tables_in_eva_3 |
++-----------------+
+| copia_actor     |
++-----------------+
+1 row in set (0.0033 sec)
+
+ MySQL  localhost:3306 ssl  eva_3  SQL > desc copia_actor;
++-------------+----------------------+------+-----+-------------------+-----------------------------------------------+
+| Field       | Type                 | Null | Key | Default           | Extra                                         |
++-------------+----------------------+------+-----+-------------------+-----------------------------------------------+
+| actor_id    | smallint(5) unsigned | NO   |     | 0                 |                                               |
+| first_name  | varchar(45)          | NO   |     | NULL              |                                               |
+| last_name   | varchar(45)          | NO   |     | NULL              |                                               |
+| last_update | timestamp            | NO   |     | CURRENT_TIMESTAMP | DEFAULT_GENERATED on update CURRENT_TIMESTAMP |
++-------------+----------------------+------+-----+-------------------+-----------------------------------------------+
+4 rows in set (0.0616 sec)
+
+ MySQL  localhost:3306 ssl  eva_3  SQL > select cuenta_actores();
++------------------+
+| cuenta_actores() |
++------------------+
+|              200 |
++------------------+
+1 row in set (0.0666 sec)
+
+ MySQL  localhost:3306 ssl  eva_3  SQL > select * from copia actor
+                                      -> where last_name like 'N%;
+                                      '> '
+                                      -> ';
+                                      '>
+                                      '> ^C
+ MySQL  localhost:3306 ssl  eva_3  SQL > select * from copia_actor
+                                      -> where last_name like 'N%;
+                                      '>
+                                      '> ^C
+ MySQL  localhost:3306 ssl  eva_3  SQL >  select * from copia_actor
+                                      -> where last_name like 'N%'
+                                      -> ;
++----------+------------+-----------+---------------------+
+| actor_id | first_name | last_name | last_update         |
++----------+------------+-----------+---------------------+
+|        6 | BETTE      | NICHOLSON | 2006-02-15 04:34:33 |
+|       61 | CHRISTIAN  | NEESON    | 2006-02-15 04:34:33 |
+|       62 | JAYNE      | NEESON    | 2006-02-15 04:34:33 |
+|      108 | WARREN     | NOLTE     | 2006-02-15 04:34:33 |
+|      122 | SALMA      | NOLTE     | 2006-02-15 04:34:33 |
+|      125 | ALBERT     | NOLTE     | 2006-02-15 04:34:33 |
+|      150 | JAYNE      | NOLTE     | 2006-02-15 04:34:33 |
++----------+------------+-----------+---------------------+
+7 rows in set (0.0764 sec)
+
+ MySQL  localhost:3306 ssl  eva_3  SQL > select cuenta_inicial('N');
++---------------------+
+| cuenta_inicial('N') |
++---------------------+
+|                   7 |
++---------------------+
+1 row in set (0.0667 sec)
+
+ MySQL  localhost:3306 ssl  eva_3  SQL > select cuenta_inicial('A');
++---------------------+
+| cuenta_inicial('A') |
++---------------------+
+|                   7 |
++---------------------+
+1 row in set (0.0017 sec)
+
+ MySQL  localhost:3306 ssl  eva_3  SQL > select cuenta_inicial('B');
++---------------------+
+| cuenta_inicial('B') |
++---------------------+
+|                  22 |
++---------------------+
+1 row in set (0.0018 sec)
+
+ MySQL  localhost:3306 ssl  eva_3  SQL > select cuenta_inicial('ALLEN');
++-------------------------+
+| cuenta_inicial('ALLEN') |
++-------------------------+
+|                       3 |
++-------------------------+
+1 row in set (0.0017 sec)
+
+ MySQL  localhost:3306 ssl  eva_3  SQL > select suma_numeros(1, 2);
++--------------------+
+| suma_numeros(1, 2) |
++--------------------+
+|                  3 |
++--------------------+
+1 row in set (0.0014 sec)
+
+ MySQL  localhost:3306 ssl  eva_3  SQL > create table numeros(
+                                      -> valor1 int,
+                                      -> valor2 int);
+Query OK, 0 rows affected (0.9582 sec)
+
+ MySQL  localhost:3306 ssl  eva_3  SQL > insert into table numeros
+                                      -> values(10, 20)
+                                      -> ;
+ERROR: 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'table numeros
+values(10, 20)' at line 1
+
+ MySQL  localhost:3306 ssl  eva_3  SQL > insert into table numeros(valor1, valor2)
+                                      -> values(10,20), (5,8), (1,2), (123, 456);
+ERROR: 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'table numeros(valor1, valor2)
+values(10,20), (5,8), (1,2), (123, 456)' at line 1
+
+ MySQL  localhost:3306 ssl  eva_3  SQL > insert into table numeros values(10,20), (5,8), (1,2), (123, 456);
+ERROR: 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'table numeros values(10,20), (5,8), (1,2), (123, 456)' at line 1
+
+ MySQL  localhost:3306 ssl  eva_3  SQL > insert into numeros values(10,20), (5,8), (1,2), (123, 456);
+Query OK, 4 rows affected (0.2494 sec)
+
+Records: 4  Duplicates: 0  Warnings: 0
+
+ MySQL  localhost:3306 ssl  eva_3  SQL > selecto * from numeros;
+ERROR: 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'selecto * from numeros' at line 1
+
+ MySQL  localhost:3306 ssl  eva_3  SQL > select * from numeros;
++--------+--------+
+| valor1 | valor2 |
++--------+--------+
+|     10 |     20 |
+|      5 |      8 |
+|      1 |      2 |
+|    123 |    456 |
++--------+--------+
+4 rows in set (0.0009 sec)
+
+ MySQL  localhost:3306 ssl  eva_3  SQL > select*,suma_numeros(valor1, valor2) as resu from numeros;
++--------+--------+------+
+| valor1 | valor2 | resu |
++--------+--------+------+
+|     10 |     20 |   30 |
+|      5 |      8 |   13 |
+|      1 |      2 |    3 |
+|    123 |    456 |  579 |
++--------+--------+------+
+4 rows in set (0.0011 sec)
+
+ MySQL  localhost:3306 ssl  eva_3  SQL > select es_par(2);
+ERROR: 1318 (42000): ClassicResult.fetchOne: Incorrect number of arguments for FUNCTION eva_3.es_par; expected 0, got 1
+
+ MySQL  localhost:3306 ssl  eva_3  SQL > select es_par(10);
+ERROR: 1318 (42000): ClassicResult.fetchOne: Incorrect number of arguments for FUNCTION eva_3.es_par; expected 0, got 1
+
+ MySQL  localhost:3306 ssl  eva_3  SQL > select * es_par(10);
+ERROR: 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'es_par(10)'
